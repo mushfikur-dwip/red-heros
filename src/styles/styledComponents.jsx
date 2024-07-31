@@ -89,7 +89,6 @@ export const CircleCanvas = styled.canvas`
     height: auto; /* Adjust the height automatically */
     border-radius: 5px;
     box-sizing: border-box;
-    border: 2px dashed #e0e0e0; /* Dashed border */
     background-color: white; /* Ensure the background is white */
     margin-bottom: 10px;
 `;
