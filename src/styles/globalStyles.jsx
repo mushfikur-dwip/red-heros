@@ -4,10 +4,11 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
     body {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     aline-items: center;
-    margin: 0;
+    margin: 50px auto;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f9;

@@ -84,7 +84,7 @@ const PhotoFrame = ({ photo }) => {
     return (
         <FrameContainer>
             <CircleCanvas ref={canvasRef} />
-            <DownloadButton className='redBtn' onClick={handleDownload}>রক্তাত ছবি ডাউনলোড</DownloadButton>
+            <DownloadButton className='redBtn' onClick={handleDownload}>ফ্রেমবিহীন ছবি ডাউনলোড</DownloadButton>
         </FrameContainer>
     );
 };

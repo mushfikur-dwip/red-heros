@@ -3,6 +3,8 @@ import FileUpload from "./components/FileUpload";
 import PhotoFrame from "./components/PhotoFrame";
 import PhotoFrameWithImage from "./components/PhotoFrameWithImage";
 import GlobalStyle from "./styles/globalStyles";
+import HowTo from "./components/FirstImg.jsx";
+import SecImg from "./components/SecImg.jsx";
 import {
     Container,
     Title,
@@ -13,6 +15,7 @@ import {
 const App = () => {
     const [photo, setPhoto] = useState(null);
     const [useFrame, setUseFrame] = useState(false);
+    const [showFirstImg, setFirstImg] = useState(false);
     const [imageCount, setImageCount] = useState(() => {
         // Initialize from localStorage or default to 0
         const savedCount = localStorage.getItem("imageCount");
@@ -34,20 +37,25 @@ const App = () => {
         reader.readAsDataURL(file);
     };
 
+    const toggleFrame = () => { 
+        setUseFrame((prevUseFrame) => !prevUseFrame);
+        setFirstImg((prevFirstImg) => !prevFirstImg);   
+    };
     return (
         <>
             <GlobalStyle />
             <Container className="containerColor">
-                <Title style={{ color: "red", textDecoration: "none" }}>
-                    রক্তাক্ত আগস্ট
+                <Title style={{ color: "red", textDecoration: "none", textAlign: "center" }}>
+                    আন্দোলন হোক<br style={{
+                    }} /> ঘরে ঘরে
                 </Title>
-                <div>{/* You might want to add something here if needed */}</div>
+                <div>{/* Yoসu might want to add something here if needed */}</div>
                 {!useFrame && photo && <PhotoFrame photo={photo} />}
                 {useFrame && photo && <PhotoFrameWithImage photo={photo} />}
                 <FileUpload onDrop={handlePhotoDrop} />
                 <div style={{ display: "flex", flexDirection: "column" }}>
                     <SwitchButton onClick={() => setUseFrame(!useFrame)}>
-                        {useFrame ? "রক্তাক্ত ছবি" : "ফ্রেমযুক্ত ছবি"}
+                        {useFrame ? "ফ্রেমবিহীন ছবি" : "ফ্রেমযুক্ত ছবি"}
                     </SwitchButton>
                     {/* <SwitchButton>
                     <span>{imageCount} ইমেজ জেনারেট হয়েছে</span>
@@ -86,20 +94,20 @@ const App = () => {
                                 cursor: 'none !important',
                                 textAlign: "center",
                                 textDecoration: "none",
-                                pointerEvents: "none !important", 
+                                pointerEvents: "none !important",
                             }}
                             target="_blank"
                             href="#"
                             disabled
                         >
-                            আমার ভাইয়েরা
+                            শহীদ ভাইয়েরা
                         </a>
-                        
                     </Footer>
                 </div>
-                
             </Container>
-
+            {/* <HowTo />
+            <SecImg /> */}
+            {showFirstImg ? <HowTo /> : <SecImg />} {/* Conditionally render HowTo or SecImg */}
 
         </>
     );

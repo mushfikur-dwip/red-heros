@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     width: 90%;
+    height: auto;
     flex-direction: column;
     align-items: center;
     padding: 20px;
@@ -12,6 +13,17 @@ export const Container = styled.div`
     border-radius: 10px;
     margin: 20px;
 `;
+// export const howToWork = styled.div`
+//     display: flex;
+//     width: 90%;
+//     flex-direction: column;
+//     align-items: center;
+//     padding: 10px !imoortant;
+//     background-color: #ffffff;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     border-radius: 10px;
+//     margin: 20px;
+// `;
 
 export const Title = styled.h1`
     margin-bottom: 20px;
