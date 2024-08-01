@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     body {
+    width: 100%;
     display: flex;
     justify-content: center;
     aline-items: center;
